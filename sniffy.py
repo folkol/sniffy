@@ -31,9 +31,14 @@ def packets():
         yield addr(ip.src), addr(ip.dst), tcp.data
 
 
-if __name__ == '__main__':
+def main():
+    global src, dst, text
     normal_chars = printable[:95]
     for src, dst, data in packets():
         text = data.decode('ascii', 'ignore')
         text = ''.join(c for c in text if c in normal_chars)
         print(f'{src:15} {dst:15} {text}', flush=True)
+
+
+if __name__ == '__main__':
+    main()
