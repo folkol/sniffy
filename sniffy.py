@@ -32,7 +32,6 @@ def packets():
 
 
 def main():
-    global src, dst, text
     normal_chars = printable[:95]
     for src, dst, data in packets():
         text = data.decode('ascii', 'ignore')
