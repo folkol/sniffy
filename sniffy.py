@@ -11,6 +11,10 @@ from dpkt.ip import IP
 from dpkt.tcp import TCP
 
 
+def addr(bs):
+    return '.'.join(str(b) for b in bs)
+
+
 def packets():
     """Yields tuples with data extracted from captured packages."""
     sniffy = pcap(name=None, promisc=True, immediate=True, timeout_ms=50)
@@ -23,9 +27,6 @@ def packets():
         if not isinstance(ip.data, TCP):
             continue
         tcp = ip.data
-
-        def addr(bs):
-            return '.'.join(str(b) for b in bs)
 
         yield addr(ip.src), addr(ip.dst), tcp.data
 
