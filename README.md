@@ -1,6 +1,10 @@
 # Sniffy — a simple TCP sniffer
 
-Dumps TCP packages as tab separated columns of text.
+Dumps TCP packages as space separated columns of text (SRC DST DATA).
+
+## Install
+
+`$ pip3 install sniffy`
 
 ## Release
 

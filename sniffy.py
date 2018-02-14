@@ -1,7 +1,6 @@
 """Sniffy is a thin wrapper around pypcap.
 
-This tool will work for the most simple cases. Use tcpdump if you need
-something more advanced.
+Use tcpdump if you need something more advanced.
  """
 from pcap import pcap
 from string import printable
